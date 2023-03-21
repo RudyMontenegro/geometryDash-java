@@ -1,0 +1,63 @@
+package Mecanismo;
+
+import javax.swing.JOptionPane;
+
+public class setMatriz {
+    public boolean colicionBandera = true;
+    boolean sw = true;
+    public ObjetoJuego bc = null;
+   
+
+   private ObjetoJuego[][] matObs;
+   public void setMatrizA(ObjetoJuego[][] matObs) {
+  	   this.matObs = matObs;
+    }
+		public void setMat( int pixelR,Jugador j1) {
+			if(getObstaculo(j1.posMatY,j1.posMatX+1)==5)
+			{j1.CuadroSalta();
+			System.out.println("jugadro salta23");
+			}
+			if(getObstaculo(j1.posMatY,j1.posMatX)==1 || getObstaculo(j1.posMatY,j1.posMatX)==3)colicionBandera = sw;
+			if(getObstaculo(j1.posMatY,j1.posMatX)==8) {
+				JOptionPane.showMessageDialog(null, "Ganaste!!!, fin del juego");
+			}
+			j1.setPosMatX();
+			saveObs(j1.posMatY,j1.posMatX);
+			matObs[j1.posMatY][j1.posMatX] = j1;
+			j1.setMat(matObs);
+			j1.hiloCaerJugador();
+			colicion(j1);
+			
+		}
+		
+		public void colicion(Jugador j1) {
+		//	boolean sw = true;
+			if(getObstaculo(j1.posMatY-1,j1.posMatX)==1 && j1.swSaltar) {
+				colicionBandera = sw;
+			} else if(getObstaculo(j1.posMatY-1,j1.posMatX+1 )==1 && j1.swSaltar){
+				colicionBandera = sw;
+			}else if(getObstaculo(j1.posMatY,j1.posMatX+1)==1 || getObstaculo(j1.posMatY,j1.posMatX+1)==3 && !j1.swSaltar) {
+				
+				colicionBandera = sw;
+			}else if(j1.posMatY<8) {
+							  if(getObstaculo(j1.posMatY+1,j1.posMatX)==3 && !j1.swSaltar ) {
+								  colicionBandera = sw;		
+							}
+			}
+			if(getObstaculo(j1.posMatY,j1.posMatX+1)==4 || getObstaculo(j1.posMatY-1,j1.posMatX+1 )==4) {
+				j1.swVolar = !j1.swVolar;
+			}
+			if(getObstaculo(j1.posMatY,j1.posMatX+1)==6) {
+				j1.posMatY = 1;
+				j1.y= 70;
+			}
+			}
+private int getObstaculo(int x,int y) {
+	if(matObs[x][y]!=null) {
+	return matObs[x][y].numTipo;
+	}else return 0;
+}
+public void saveObs(int x,int y) {
+		bc = matObs[x][y];
+}
+}
