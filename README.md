@@ -14,14 +14,6 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
-</p>
 
 ![screenshot](https://github.com/RudyMontenegro/geometryDash-java/blob/main/srcReadme/tinyGP.gif) 
 
@@ -44,10 +36,10 @@
 
 ## How To Test
 
-To  [download](https://github.com/RudyMontenegro/geometryDash-java/blob/main/GeometryDash.zip) GeometryDash.zip, unzip and open with [VScode](https://code.visualstudio.com/) and this extension:
+To  [download](https://github.com/RudyMontenegro/geometryDash-java/blob/main/GeometryDash.zip) GeometryDash.zip, unzip and open with [VScode](https://code.visualstudio.com/) then install this extension:
 ![image info](https://github.com/RudyMontenegro/geometryDash-java/blob/main/srcReadme/pluginsVScode.png)
 
-After, localise main java class in the route: GeometryDash\geometryDash-java\src\Mecanismo\MenuInicio.java and play test:
+Then, localise main java class in the route: GeometryDash\geometryDash-java\src\Mecanismo\MenuInicio.java and play test:
 ![image info](https://github.com/RudyMontenegro/geometryDash-java/blob/main/srcReadme/playTest.png)
 
 > **Note**
